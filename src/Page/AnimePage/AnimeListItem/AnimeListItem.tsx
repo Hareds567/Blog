@@ -1,0 +1,36 @@
+import React, { FC } from "react";
+//Data
+import { Anime } from "../../../Data/Anime/Anime";
+//CSS
+import "./AnimeListItem.css";
+//API
+import { getAnimeInfo } from "../../../API/Anime/API_Anime";
+interface Props {
+  anime: Anime;
+}
+const AnimeListItem: FC<Props> = (props) => {
+  const [anime, set_anime] = React.useState<any>();
+
+  const getAnime = async () => {
+    const temp = await getAnimeInfo(props.anime.id);
+    set_anime(temp);
+  };
+
+  React.useEffect(() => {
+    getAnime();
+  }, []);
+  React.useEffect(() => {
+    // console.log(anime);
+  }, [anime]);
+
+  return (
+    <div className="AnimeListItem">
+      <img src={anime?.attributes.posterImage.small} />
+      <h1>{props.anime.name}</h1>
+      <p className="AnimeListItemSynopsis">{anime?.attributes.synopsis}</p>
+      <span className="AnimeListItemAnimeStatus">{props.anime.status}</span>
+    </div>
+  );
+};
+
+export default AnimeListItem;

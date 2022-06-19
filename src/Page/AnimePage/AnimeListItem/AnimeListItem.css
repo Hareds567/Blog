@@ -1,0 +1,61 @@
+.AnimeListItem {
+  position: relative;
+  display: grid;
+  grid-template-areas:
+    "image animeTitle"
+    "image animeListFooter"
+    "image animeSynopsis";
+  color: white;
+  width: fit-content;
+  outline: 1px solid f18f01;
+  padding: 1.5rem;
+  background-color: rgba(46, 64, 87, 0.4);
+}
+
+.AnimeListItem img {
+  grid-area: image;
+  width: 184.6px;
+  height: 261.3px;
+  width: inherit;
+}
+
+.AnimeListItem h1 {
+  margin: 0;
+  height: fit-content;
+  width: 17ch;
+  max-height: 7ch;
+  overflow-y: auto;
+  text-overflow: ellipsis;
+  grid-area: animeTitle;
+  padding: 0 1rem;
+  font-size: 18px;
+  color: var(--secondary-color);
+}
+
+.AnimeListItemSynopsis {
+  grid-area: animeSynopsis;
+  width: 25ch;
+  height: 145px;
+  font-size: 12px;
+  overflow-y: auto;
+  text-overflow: ellipsis;
+  white-space: wrap;
+  padding-left: 1rem;
+}
+/* Scrollbar  */
+.AnimeListItemSynopsis::-webkit-scrollbar {
+  width: 5px;
+}
+.AnimeListItemSynopsis::-webkit-scrollbar-thumb {
+  color: white;
+  border-radius: 5px;
+}
+.AnimeListItem .AnimeListItemAnimeStatus {
+  display: flex;
+  color: var(--secondary-color);
+  grid-area: animeListFooter;
+  font-size: 12px;
+  padding: 0 1rem;
+}
+
+/* =================== */

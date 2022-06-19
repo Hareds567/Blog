@@ -1,0 +1,36 @@
+.title {
+  cursor: pointer;
+}
+.HomePage {
+  position: relative;
+  color: #ffffff;
+  font-family: "Ruda";
+  /* outline: 5px solid green; */
+  height: 100%;
+}
+.HomePage .content-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  transform: translateY(50px);
+}
+.content-container ul {
+  display: inline-block;
+  /* outline: 1px solid red; */
+}
+.content-container ul li {
+  position: relative;
+  list-style-type: none;
+  display: inline-block;
+  padding: 2rem;
+  margin: 2rem;
+  width: 9rem;
+  height: 55vh;
+  background-color: var(--secondary-color);
+  border-radius: 3px;
+}
+
+.content-container ul li:hover {
+  transform: scale(1.05);
+  transition: transform 150ms ease-in-out;
+}
