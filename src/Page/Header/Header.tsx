@@ -7,7 +7,7 @@ const Header = () => {
   const navigate = useNavigate();
   const goToHomePage = (e: React.MouseEvent) => {
     e.preventDefault();
-    navigate("../home", { replace: true });
+    navigate("../", { replace: true });
   };
   return (
     <header className="Header">

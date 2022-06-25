@@ -1,16 +1,12 @@
 .AnimePage {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100%;
 }
 
 .anime-filter {
   color: white;
-  grid-area: filter;
-  /* outline: 1px solid red; */
   height: fit-content;
 }
 .anime-list {
@@ -18,20 +14,10 @@
   display: grid;
   grid-template-columns: repeat(3, auto);
   grid-template-rows: repeat(6, auto);
-  gap: 2rem;
+  gap: 1rem;
   /* outline: 1px solid white; */
   flex-wrap: wrap;
 }
-.page-footer {
-  grid-area: pageFooter;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  color: white;
-  width: 100%;
-  height: fit-content;
-  gap: 1rem;
-  /* outline: 1px solid blue; */
+.test2 {
+  width: fit-content;
 }

@@ -7,6 +7,7 @@ import "./AnimeListItem.css";
 import { getAnimeInfo } from "../../../API/Anime/API_Anime";
 interface Props {
   anime: Anime;
+  set_anime: React.Dispatch<React.SetStateAction<undefined | any>>;
 }
 const AnimeListItem: FC<Props> = (props) => {
   const [anime, set_anime] = React.useState<any>();
@@ -19,14 +20,17 @@ const AnimeListItem: FC<Props> = (props) => {
   React.useEffect(() => {
     getAnime();
   }, []);
-  React.useEffect(() => {
-    // console.log(anime);
-  }, [anime]);
 
   return (
     <div className="AnimeListItem">
       <img src={anime?.attributes.posterImage.small} />
-      <h1>{props.anime.name}</h1>
+      <h1
+        onClick={() => {
+          props.set_anime(props.anime);
+        }}
+      >
+        {props.anime.name}
+      </h1>
       <p className="AnimeListItemSynopsis">{anime?.attributes.synopsis}</p>
       <span className="AnimeListItemAnimeStatus">{props.anime.status}</span>
     </div>

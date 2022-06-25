@@ -192,11 +192,6 @@ export const AnimeList: Anime[] = [
     status: status.FINISHED,
   },
   {
-    id: 42194,
-    name: "Yahari Ore no Seishun Love Comedy wa Machigatteiru. Kan",
-    status: status.FINISHED,
-  },
-  {
     id: 44382,
     name: "Sono Bisque Doll wa Koi wo Suru",
     status: status.FINISHED,
@@ -229,6 +224,271 @@ export const AnimeList: Anime[] = [
   {
     id: 7658,
     name: "Fate/Zero 2nd Season",
+    status: status.FINISHED,
+  },
+  {
+    id: 43849,
+    name: "Ousama Ranking",
+    status: status.FINISHED,
+  },
+  {
+    id: 1376,
+    name: "Death Node",
+    status: status.FINISHED,
+  },
+  {
+    id: 9969,
+    name: "Death Parade",
+    status: status.FINISHED,
+  },
+  {
+    id: 42080,
+    name: "Dr. Stone",
+    status: status.FINISHED,
+  },
+  {
+    id: 42867,
+    name: "Dr.Stone: Stone Wars",
+    status: status.FINISHED,
+  },
+  {
+    id: 41056,
+    name: "Seishun Buta Yarou wa Bunny Girl Senpai no Yume wo Minai",
+    status: status.FINISHED,
+  },
+  {
+    id: 6109,
+    name: "Gyakkyou Burai Kaiji: Hakairoku-hen",
+    status: status.INPROGRESS,
+  },
+  {
+    id: 43066,
+    name: "86",
+    status: status.FINISHED,
+  },
+  {
+    id: 44398,
+    name: "86 Part 2",
+    status: status.FINISHED,
+  },
+  {
+    id: 13949,
+    name: "Megalo Box",
+    status: status.FINISHED,
+  },
+  {
+    id: 42720,
+    name: "Megalo Box 2",
+    status: status.FINISHED,
+  },
+  {
+    id: 43545,
+    name: "Horimiya",
+    status: status.FINISHED,
+  },
+  {
+    id: 11,
+    name: "Naruto",
+    status: status.FINISHED,
+  },
+  {
+    id: 1555,
+    name: "Naruto: Shippuden",
+    status: status.FINISHED,
+  },
+  {
+    id: 11339,
+    name: "Bungou Stray Dogs",
+    status: status.FINISHED,
+  },
+  {
+    id: 11882,
+    name: "Bungou Stray Dogs 2nd Season",
+    status: status.FINISHED,
+  },
+  {
+    id: 41984,
+    name: "Bungou Stray Dogs 3",
+    status: status.FINISHED,
+  },
+  {
+    id: 13597,
+    name: "Shoujo Shuumatsu Ryokou",
+    status: status.FINISHED,
+  },
+  {
+    id: 9967,
+    name: "Shokugeki no Souma",
+    status: status.FINISHED,
+  },
+  {
+    id: 11612,
+    name: "Shokugeki no Souma: Ni no Sara",
+    status: status.FINISHED,
+  },
+  {
+    id: 13581,
+    name: "Shokugeki no Souma: San no Sara",
+    status: status.FINISHED,
+  },
+  {
+    id: 14092,
+    name: "Shokugeki no Souma: San no Sara - Toutsuki Ressha-hen",
+    status: status.FINISHED,
+  },
+  {
+    id: 199,
+    name: "Dragon Ball",
+    status: status.FINISHED,
+  },
+  {
+    id: 720,
+    name: "Dragon Ball Z",
+    status: status.FINISHED,
+  },
+  {
+    id: 200,
+    name: "Dragon Ball GT",
+    status: status.FINISHED,
+  },
+  {
+    id: 10879,
+    name: "Dragon Ball Super",
+    status: status.FINISHED,
+  },
+  {
+    id: 13209,
+    name: "Black Clover",
+    status: status.FINISHED,
+  },
+  {
+    id: 10941,
+    name: "Kono Subarashii Sekai ni Shukufuku wo!",
+    status: status.FINISHED,
+  },
+  {
+    id: 11937,
+    name: "Kono Subarashii Sekai ni Shukufuku wo! 2",
+    status: status.FINISHED,
+  },
+  {
+    id: 43321,
+    name: "Tokyo Revengers",
+    status: status.FINISHED,
+  },
+  {
+    id: 7880,
+    name: "No Game No Life",
+    status: status.FINISHED,
+  },
+  {
+    id: 7023,
+    name: "Sakura-sou no Pet na Kanojo",
+    status: status.FINISHED,
+  },
+  {
+    id: 6686,
+    name: "Hyouka",
+    status: status.FINISHED,
+  },
+  {
+    id: 4604,
+    name: "Angel Beats!",
+    status: status.FINISHED,
+  },
+  {
+    id: 5330,
+    name: "Gosick",
+    status: status.INPROGRESS,
+  },
+  {
+    id: 43595,
+    name: "SK8",
+    status: status.FINISHED,
+  },
+  {
+    id: 41459,
+    name: "Zombieland Saga",
+    status: status.INPROGRESS,
+  },
+  {
+    id: 8648,
+    name: "Akatsuki no Yona",
+    status: status.FINISHED,
+  },
+  {
+    id: 8093,
+    name: "Baby Steps",
+    status: status.FINISHED,
+  },
+  {
+    id: 9142,
+    name: "Baby Steps 2nd Season",
+    status: status.FINISHED,
+  },
+  {
+    id: 44551,
+    name: "Komi-san wa, Komyushou desu.",
+    status: status.INPROGRESS,
+  },
+  {
+    id: 13593,
+    name: "Tate no Yuusha no Nariagari",
+    status: status.FINISHED,
+  },
+  {
+    id: 42530,
+    name: "Tate no Yuusha no Nariagari 2",
+    status: status.FINISHED,
+  },
+  {
+    id: 13485,
+    name: "Uma Musume: Pretty Derby",
+    status: status.INPROGRESS,
+  },
+  {
+    id: 7169,
+    name: "Yahari Ore no Seishun Love Comedy wa Machigatteiru.",
+    status: status.FINISHED,
+  },
+  {
+    id: 8478,
+    name: "Yahari Ore no Seishun Love Comedy wa Machigatteiru. Zoku",
+    status: status.FINISHED,
+  },
+  {
+    id: 42194,
+    name: "Yahari Ore no Seishun Love Comedy wa Machigatteiru. Kan",
+    status: status.FINISHED,
+  },
+  {
+    id: 1962,
+    name: "Clannad",
+    status: status.FINISHED,
+  },
+  {
+    id: 3505,
+    name: "Clannad: After Story",
+    status: status.FINISHED,
+  },
+  {
+    id: 42722,
+    name: "Kakushigoto (TV)",
+    status: status.INPROGRESS,
+  },
+  {
+    id: 7370,
+    name: "Nagi no Asu kara",
+    status: status.FINISHED,
+  },
+  {
+    id: 7881,
+    name: "Noragami",
+    status: status.FINISHED,
+  },
+  {
+    id: 10800,
+    name: "Noragami Aragoto",
     status: status.FINISHED,
   },
 ];

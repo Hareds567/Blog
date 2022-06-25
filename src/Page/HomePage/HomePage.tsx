@@ -7,7 +7,7 @@ import "./HomePage.css";
 const HomePage = () => {
   const navigate = useNavigate();
   const onClick = (string: string) => {
-    navigate(`./${string}`, { replace: false });
+    navigate(`./${string}`);
   };
   return (
     <div className="HomePage">

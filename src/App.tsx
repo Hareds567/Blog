@@ -17,10 +17,14 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/anime" element={<AnimePage />} />
-        <Route path="/games" element={<></>} />
-        <Route path="/movies" element={<></>} />
-        <Route path="/tvShows" element={<></>} />
+        <Route path="anime" element={<AnimePage />}>
+          <Route path="?page=" element={<AnimePage />} />
+          <Route path="?letter=" element={<AnimePage />} />
+          <Route path=":anime" element={<AnimePage />} />
+        </Route>
+        <Route path="games" element={<></>} />
+        <Route path="movies" element={<></>} />
+        <Route path="tvShows" element={<></>} />
 
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
