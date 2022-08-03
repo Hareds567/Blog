@@ -3,20 +3,21 @@ import React, { FC } from "react";
 import "./AnimeFilter.css";
 //Datatypes
 import { Anime, AnimeList } from "../../../Data/Anime/Anime";
+import { sortByLetter } from "../../../Algo/Sort";
 //Libraries
 import {
   useNavigate,
   useSearchParams,
   createSearchParams,
+  useLocation,
 } from "react-router-dom";
 
 //Components
 import AnimeSearch from "./AnimeSearch/AnimeSearch";
 
 interface Props {
-  animeList: Anime[];
   set_animeList: React.Dispatch<React.SetStateAction<Anime[]>>;
-  animeToRender: React.Dispatch<React.SetStateAction<Anime[]>>;
+  setNewList: (list: Anime[]) => void;
 }
 const AnimeFilter: FC<Props> = (props) => {
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -24,19 +25,20 @@ const AnimeFilter: FC<Props> = (props) => {
   const navigate = useNavigate();
   const [searchParams, set_searchParams] = useSearchParams();
   const [activeLetter, set_ActiveLetter] = React.useState("");
+  const location = useLocation();
 
   //Functions
   // -  Handles Letter on Click
-  const letterOnClick = (e: React.MouseEvent, letter: string) => {
-    e.preventDefault();
+  const letterOnClick = (letter: string, e?: React.MouseEvent) => {
+    e?.preventDefault();
     //If letter is active
     if (letter === activeLetter) {
-      set_ActiveLetter("abc");
+      set_ActiveLetter("");
       props.set_animeList(AnimeList);
-      props.animeToRender(AnimeList.slice(0, 18));
       set_searchParams({ page: "1" });
       return;
     }
+
     //Search for Anime with letter x using OG list
     let animeList = AnimeList;
     const temp = animeList.filter((anime) => {
@@ -45,14 +47,25 @@ const AnimeFilter: FC<Props> = (props) => {
         return anime;
       }
     });
+    const test = temp.sort((a, b) => {
+      return sortByLetter(a.name, b.name);
+    });
 
     set_ActiveLetter(letter);
+    // console.log("Temp from Filter");
+    // console.log(temp);
     props.set_animeList(temp);
-    props.animeToRender(temp);
+    // props.animeToRender(temp);
     const param = createSearchParams({ letter: letter });
     set_searchParams(param);
   };
 
+  React.useEffect(() => {
+    let temp = location.search.split("=");
+    if (temp[0] === "?letter") {
+      letterOnClick(temp[1]);
+    }
+  }, []);
   return (
     <div className="AnimeFilterContainer">
       <div className="sortByLetter">
@@ -62,16 +75,13 @@ const AnimeFilter: FC<Props> = (props) => {
             className={`letter ${
               activeLetter === letter ? "letter_active" : ""
             }`}
-            onClick={(e) => letterOnClick(e, letter)}
+            onClick={(e) => letterOnClick(letter, e)}
           >
             {letter.toLocaleUpperCase()}
           </span>
         ))}
       </div>
-      <AnimeSearch
-        set_animeList={props.set_animeList}
-        animeToRender={props.animeToRender}
-      />
+      <AnimeSearch set_animeList={props.set_animeList} />
     </div>
   );
 };

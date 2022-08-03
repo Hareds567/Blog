@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 html,
 body {
   --primary-color: rgb(41, 47, 54);
@@ -5,13 +10,14 @@ body {
   background-color: var(--primary-color);
   margin: 0;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 .App {
   position: relative;
   display: flex;
   flex-direction: column;
-  height: fit-content;
+  height: 100%;
 }
 
 .cursor {

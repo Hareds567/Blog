@@ -13,7 +13,6 @@ import {
 
 interface Props {
   set_animeList: React.Dispatch<React.SetStateAction<Anime[]>>;
-  animeToRender: React.Dispatch<React.SetStateAction<Anime[]>>;
 }
 const AnimeSearch: React.FC<Props> = (props) => {
   const [input, set_input] = React.useState("");
@@ -34,16 +33,17 @@ const AnimeSearch: React.FC<Props> = (props) => {
       return;
     });
     props.set_animeList(temp);
-    props.animeToRender(temp.slice(0, 18));
+    // props.animeToRender(temp.slice(0, 18));
     if (input.length > 0) {
       const params = createSearchParams({ search: input });
       setSearchParams(params);
-    } else {
     }
   }, [input]);
 
   const xOnclick = (e: React.MouseEvent) => {
     e.preventDefault();
+    const params = createSearchParams({ page: "1" });
+    setSearchParams(params);
     set_input("");
     set_isActive(false);
   };
@@ -57,6 +57,7 @@ const AnimeSearch: React.FC<Props> = (props) => {
       }}
     >
       <Search
+        className="searchIcon"
         size={"20px"}
         onClick={() => {
           set_isActive(true);
@@ -71,6 +72,7 @@ const AnimeSearch: React.FC<Props> = (props) => {
         onChange={(e) => set_input(e.currentTarget.value)}
       />
       {input.length > 0 ? <X onClick={(e) => xOnclick(e)} /> : <></>}
+      <div className="search-dropdown"></div>
     </div>
   );
 };

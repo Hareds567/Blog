@@ -1,14 +1,16 @@
 import React, { FC } from "react";
 import "./App.css";
-//Redux
-import { IRootState } from "./Redux/Store/Store";
-import { useSelector } from "react-redux";
 //Libraries
 import { Navigate, Route, Routes, Outlet } from "react-router-dom";
 //Components
 import Header from "./Page/Header/Header";
 import HomePage from "./Page/HomePage/HomePage";
 import AnimePage from "./Page/AnimePage/AnimePage";
+
+window.addEventListener("beforeunload", (e) => {
+  e.preventDefault();
+  localStorage.removeItem("animeInfo");
+});
 
 function App() {
   return (

@@ -1,5 +1,284 @@
 .AnimeInfoContainer {
   position: absolute;
+  bottom: 0;
+  left: 50%;
+  top: 50%;
   color: white;
+  transform: translateX(-50%);
+  background-color: rgb(38, 70, 83);
+  z-index: 2;
+  width: 80%;
+  max-width: 1000px;
+  height: fit-content;
+  min-height: 80vh;
+  border-radius: 5px;
+  box-shadow: rgb(0 0 0 / 75%) 0px 3px 10px;
+  cursor: default;
+  padding-bottom: 1rem;
+  /* overflow-y: scroll; */
+  animation: fadeIn 300ms ease-in;
+}
+.exiting {
+  animation: fadeout 300ms linear forwards;
+}
+.exiting2 {
+  animation: fadeout2 300ms linear forwards;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+    min-height: 20vh;
+  }
+  to {
+    width: 20%;
+    min-height: 20vh;
+    /* opacity: 0; */
+  }
+}
+@keyframes fadeout2 {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 0.1;
+  }
+}
+
+.AnimeInfoContainer .loadingImage {
+  display: hidden;
+}
+
+.AnimeInfoContainerBackground {
+  position: absolute;
+  height: 100vh;
+  overflow-y: hidden;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.AnimeInfoCoverImage {
+  width: 100%;
+  z-index: 9;
+}
+
+.AnimeInfoCloseIcon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid white;
   background-color: black;
+  border-radius: 50%;
+  padding: 0.5rem;
+  top: 5%;
+  z-index: 3;
+  right: 1%;
+}
+.ImageOverlay {
+  position: absolute;
+  background: linear-gradient(to top, rgb(38, 70, 83), transparent 10%);
+  background-color: rgb(0, 0, 0, 0.4);
+  height: 98.5%;
+  width: 100%;
+  z-index: 1;
+}
+/* Containers */
+.AnimeInfo-Container1 {
+  position: relative;
+}
+.AnimeInfoGenres,
+.AnimeInfoStudio {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  /* gap: 1ch; */
+  line-height: 20px;
+  flex-wrap: wrap;
+  /* max-width: 40vh; */
+}
+.genres {
+  overflow-wrap: break-word;
+  width: 25ch;
+}
+.AnimeInfo-informationContainer {
+  padding: 0 4rem;
+  padding-bottom: 2rem;
+}
+
+.container-3 {
+  display: flex;
+  gap: 1ch;
+  align-items: center;
+  /* outline: 1px solid red; */
+  position: relative;
+}
+.container-4 {
+  margin: 1rem 0;
+}
+.container-5 {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+.Finished {
+  background-color: #80ed99;
+  color: #22577a;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+}
+.inProgress {
+  background-color: #9b5de5;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+}
+.AnimeInfoEpisodes {
+  position: relative;
+}
+.line {
+  height: 1rem;
+  background-color: white;
+  width: 1px;
+  top: 0;
+  /* border: 1px solid white; */
+}
+.siteLogo {
+  width: 100px;
+  z-index: 10;
+}
+.AnimeInfoStreamingLinks {
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 1rem 4rem;
+  gap: 2ch;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+a:hover {
+  transform: scale(1.06);
+}
+/* Fonts */
+.AnimeInfoHeader {
+  grid-area: d;
+  padding: 1rem;
+  text-align: center;
+  font-size: 36px;
+  font-family: "Mukta";
+  /* outline: 1px solid red; */
+}
+
+.AnimeInfoContainer span {
+  color: #2a9d8f;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: 281.25px;
+  max-width: 500px;
+}
+.AnimeInfoVideo {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  z-index: 1001;
+}
+
+.AnimInfoSynopsis {
+  position: relative;
+  width: 100%;
+}
+
+.animeCharacters-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* outline: 1px solid red; */
+}
+
+.animeCharacters-container .inside-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1rem;
+  gap: 0.5rem;
+  max-width: 54rem;
+  /* outline: 1px solid green; */
+}
+
+.animeCharacter-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: fit-content;
+}
+.animeCharacter-container img {
+  width: 10rem;
+}
+.animeCharacter-container div {
+  display: flex;
+  position: relative;
+  align-content: center;
+  justify-content: center;
+}
+
+.animeInfo-superHeader {
+  top: -80px;
+  position: relative;
+  display: grid;
+  grid-template:
+    "b . . ." 80px
+    "b c c c" 2rem
+    "b d d d" auto / auto 1fr 1fr;
+  /* outline: 1px solid red; */
+  z-index: 3;
+}
+
+.c {
+  grid-area: c;
+  display: flex;
+  padding-left: 1rem;
+  /* outline: 1px solid red; */
+}
+
+.c div {
+  padding: 0.3rem;
+  /* border: 1px solid red; */
+}
+.b {
+  grid-area: b;
+  width: 150px;
+  /* outline: 1px solid green; */
+}
+
+.c div:hover {
+  cursor: pointer;
+  color: #9b5de5;
 }

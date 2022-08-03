@@ -8,14 +8,17 @@
   width: 100%;
   height: fit-content;
   gap: 1rem;
-  padding: 2rem;
+  padding-top: 0.8rem;
+  padding-bottom: 1rem;
 }
 
 .pageNumber {
+  display: flex;
+  justify-content: center;
   text-align: center;
   width: 12px;
   cursor: pointer;
-  padding: 0.4rem;
+  padding: 0.4rem 0.67rem;
   border-radius: 2px;
 }
 .pageNumber:hover {

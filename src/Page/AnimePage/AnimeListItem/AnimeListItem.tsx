@@ -3,37 +3,41 @@ import React, { FC } from "react";
 import { Anime } from "../../../Data/Anime/Anime";
 //CSS
 import "./AnimeListItem.css";
-//API
-import { getAnimeInfo } from "../../../API/Anime/API_Anime";
-interface Props {
-  anime: Anime;
-  set_anime: React.Dispatch<React.SetStateAction<undefined | any>>;
-}
-const AnimeListItem: FC<Props> = (props) => {
-  const [anime, set_anime] = React.useState<any>();
+//Libraries
+import { useNavigate } from "react-router-dom";
+import { AnimeInfo, AnimePageItem } from "../AnimePage";
 
-  const getAnime = async () => {
-    const temp = await getAnimeInfo(props.anime.id);
-    set_anime(temp);
+interface Props {
+  anime: AnimePageItem;
+  set_animeIsActive: React.Dispatch<React.SetStateAction<boolean>>;
+  set_animeInfo: React.Dispatch<
+    React.SetStateAction<AnimePageItem | undefined>
+  >;
+}
+
+const AnimeListItem: FC<Props> = ({
+  anime,
+  set_animeIsActive,
+  set_animeInfo,
+}) => {
+  const onClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.preventDefault();
+    set_animeInfo(anime);
+    set_animeIsActive(true);
   };
 
-  React.useEffect(() => {
-    getAnime();
-  }, []);
-
   return (
-    <div className="AnimeListItem">
-      <img src={anime?.attributes.posterImage.small} />
-      <h1
-        onClick={() => {
-          props.set_anime(props.anime);
+    <>
+      <div
+        className="AnimeListItem"
+        onClick={(e) => {
+          onClick(e);
         }}
       >
-        {props.anime.name}
-      </h1>
-      <p className="AnimeListItemSynopsis">{anime?.attributes.synopsis}</p>
-      <span className="AnimeListItemAnimeStatus">{props.anime.status}</span>
-    </div>
+        <img src={anime.posterImages.small} />
+        <h1>{anime.title}</h1>
+      </div>
+    </>
   );
 };
 

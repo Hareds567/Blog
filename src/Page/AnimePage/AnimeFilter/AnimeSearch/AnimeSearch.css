@@ -4,6 +4,7 @@
   padding: 0.5rem;
   align-items: center;
   margin-left: auto;
+
   /* outline: 1px solid white; */
 }
 .active {
@@ -16,6 +17,13 @@
   border: none;
   outline: none;
   background-color: rgba(46, 64, 87, 0.4);
+}
+.searchIcon {
+  /* padding: 1rem; */
+  cursor: pointer;
+}
+.searchIcon:hover .AnimeSearchContainer {
+  outline: 1px solid white;
 }
 .activeInput {
   visibility: visible;

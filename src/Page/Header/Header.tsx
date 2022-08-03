@@ -10,7 +10,7 @@ const Header = () => {
     navigate("../", { replace: true });
   };
   return (
-    <header className="Header">
+    <header className="Header" id="header">
       <span className="Header title" onClick={(e) => goToHomePage(e)}>
         Hareds' Blog
       </span>

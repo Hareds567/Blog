@@ -1,4 +1,5 @@
 .AnimePage {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,14 +11,18 @@
   height: fit-content;
 }
 .anime-list {
-  position: relative;
   display: grid;
-  grid-template-columns: repeat(3, auto);
-  grid-template-rows: repeat(6, auto);
-  gap: 1rem;
+  grid-template-columns: repeat(6, auto);
+  grid-template-rows: repeat(4, auto);
+  grid-gap: 0rem 1rem;
+  /* outline: 1px solid red; */
+  align-items: start;
+  /* background-color: white; */
   /* outline: 1px solid white; */
-  flex-wrap: wrap;
 }
 .test2 {
   width: fit-content;
+}
+.testing {
+  position: relative;
 }

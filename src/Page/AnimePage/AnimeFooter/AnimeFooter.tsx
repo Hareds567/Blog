@@ -13,18 +13,28 @@ import {
 import { Anime } from "../../../Data/Anime/Anime";
 interface Props {
   animeList: Anime[];
-  setNewList: (page: number) => void;
+  setNewList: (list: Anime[]) => void;
 }
 const AnimeFooter: FC<Props> = (props) => {
   const lastPageNumber = Math.ceil(props.animeList.length / 18);
   //Router
   const [searchParams, set_searchParams] = useSearchParams();
-  const navigate = useNavigate();
   const location = useLocation();
   //States
   const [activePage, set_activePage] = React.useState<number>(1);
 
+  const pageDifference = 18;
+
   //Functions
+  // -
+  const setNewList = (page: number) => {
+    const end = page * pageDifference;
+    const start = end - pageDifference;
+    const list = props.animeList.slice(start, end);
+    console.log("hello");
+    props.setNewList(list);
+  };
+
   // - Handle End label
   const handleEndLabel = (start: number, lastPageNumber: number) => {
     if (start === lastPageNumber) return start;
@@ -43,7 +53,6 @@ const AnimeFooter: FC<Props> = (props) => {
     set_labelStart(newLabelStart);
     set_labelEnd(newLabelEnd);
     set_activePage(page);
-    props.setNewList(page);
   };
 
   // - Handles label onClick
@@ -57,22 +66,21 @@ const AnimeFooter: FC<Props> = (props) => {
     set_labelStart(newLabelStart);
     set_labelEnd(newLabelEnd);
     set_activePage(page);
-    props.setNewList(page);
+    setNewList(page);
 
     const params = createSearchParams({ page: page.toString() });
     set_searchParams(params);
-    // navigate(`?page=${page}`);
   };
   // - Go to FIrst Page
   const goToFirstPage = () => {
     set_activePage(1);
-    props.setNewList(1);
+    setNewList(1);
     handleLabelOnClick(1);
   };
   // - Go to Last Page
   const goToLastPage = () => {
     set_activePage(lastPageNumber);
-    props.setNewList(lastPageNumber);
+    setNewList(lastPageNumber);
     handleLabelOnClick(lastPageNumber);
   };
   // - Go to Previous || Next Page
